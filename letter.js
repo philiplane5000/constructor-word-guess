@@ -4,7 +4,7 @@ function Letter(char, boolean) {
     this.char = char.toLowerCase();
     this.boolean = boolean;
 
-    this.returnChar = () => {
+    this.toString = () => {
         if (this.boolean === true) {
             console.log(this.char);
             return this.char;

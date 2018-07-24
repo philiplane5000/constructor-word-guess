@@ -1,5 +1,7 @@
 let Letter = require('./letter');
 
+module.exports = Word;
+
 function Word(stringWord) {
 
     this.charArray = stringWord.split('');
@@ -18,10 +20,10 @@ function Word(stringWord) {
 
 }
 
-let word = new Word('anthropomorphism');
+// let word = new Word('anthropomorphism');
 
-console.log(word.objArray[0].checkChar('a'));
-console.log(word.objArray[0].returnChar());
+// console.log(word.objArray[0].checkChar('a'));
+// console.log(word.objArray[0].toString());
 
 
 
