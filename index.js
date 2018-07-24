@@ -8,12 +8,14 @@ let returnNewWord = (array) => {
     return array[randomIndex];
 }
 
-let unknownWordAsStr = returnNewWord(SATWords);
-console.log(typeof unknownWordAsStr);
+let newGame = () => {
+    let unknownWord = new Word(returnNewWord(SATWords))
+    console.log(unknownWord);
+}
 
-let unknownWord = new Word(unknownWordAsStr);
-console.log(unknownWord);
+newGame();
 
-// let word = new Word('psychedelic');
+// console.log(word.objArray[0].checkChar('a'));
+// console.log(word.objArray[0].toString());
 
-// console.log(word);
+

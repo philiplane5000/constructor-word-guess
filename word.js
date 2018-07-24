@@ -20,10 +20,7 @@ function Word(stringWord) {
 
 }
 
-// let word = new Word('anthropomorphism');
 
-// console.log(word.objArray[0].checkChar('a'));
-// console.log(word.objArray[0].toString());
 
 
 
