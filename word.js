@@ -1,9 +1,27 @@
 let Letter = require('./letter');
 
-let a = new Letter('a', false);
+function Word(stringWord) {
 
-//CHECKED AND WORKING:
-a.checkChar("a");
-a.returnChar();
-a.checkChar("z");
-a.returnChar();
+    this.charArray = stringWord.split('');
+
+    this.objArray = [];
+
+    this.generateObjArrayFromCharArray = function (array, objArray) {
+
+        array.forEach(function (letter, index) {
+            let charObj = new Letter(letter, false);
+            objArray.push(charObj);
+        })
+    };
+
+    this.generateObjArrayFromCharArray(this.charArray, this.objArray);
+
+}
+
+let word = new Word('anthropomorphism');
+
+console.log(word.objArray[0].checkChar('a'));
+console.log(word.objArray[0].returnChar());
+
+
+
