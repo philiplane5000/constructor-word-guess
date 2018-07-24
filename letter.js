@@ -6,10 +6,10 @@ function Letter(char, boolean) {
 
     this.toString = () => {
         if (this.boolean === true) {
-            console.log(this.char);
+            // console.log(this.char);
             return this.char;
         } else {
-            console.log('_');
+            // console.log('_');
             return "_";
         }
     }

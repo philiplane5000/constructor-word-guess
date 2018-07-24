@@ -8,19 +8,30 @@ function Word(stringWord) {
 
     this.objArray = [];
 
-    this.generateObjArrayFromCharArray = function (array, objArray) {
+    this.generateObjFromChars = (emptyArray) => {
 
-        array.forEach(function (letter, index) {
-            let charObj = new Letter(letter, false);
-            objArray.push(charObj);
+        stringWord.split('').forEach(function (letter) {
+            emptyArray.push(new Letter(letter, false))
         })
     };
 
-    this.generateObjArrayFromCharArray(this.charArray, this.objArray);
+    this.generateObjFromChars(this.objArray);
+
+    this.returnWordString = () => {
+        placeHolder = "";
+        this.objArray.forEach(function (letterObj) {
+            placeHolder += letterObj.toString() + " ";
+        })
+        return placeHolder;
+    };
+
+    this.checkGuess = (guess) => {
+        this.objArray.forEach(function (letterObj) {
+            letterObj.checkChar(guess)
+        })
+    }
 
 }
-
-
 
 
 
