@@ -1,24 +1,28 @@
 module.exports = Letter;
 
-function Letter(char, boolean) {
+function Letter(char, trueOrFalse) {
+    
+    this.trueOrFalse = trueOrFalse;
+
     this.char = char.toLowerCase();
-    this.boolean = boolean;
+
 
     this.toString = () => {
-        if (this.boolean === true) {
-            // console.log(this.char);
-            return this.char;
-        } else {
-            // console.log('_');
+        if (this.trueOrFalse === false) {
             return "_";
+        } else {
+            return this.char;
         }
     }
 
     this.checkChar = (guessedChar) => {
-        (guessedChar.toLowerCase() === this.char) ? this.boolean = true : this.boolean = false;
-        console.log(this.boolean);
+        if(guessedChar.toLowerCase() === this.char) {
+            this.trueOrFalse = true;
+        }
     }
 
 
 }
+
+//if this doesnt work try creating character with default boolean of false --> then changin with same as before(?)
 

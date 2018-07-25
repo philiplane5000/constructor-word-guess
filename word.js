@@ -4,6 +4,8 @@ module.exports = Word;
 
 function Word(stringWord) {
 
+    // let wordPlaceHolder = "";
+
     this.charArray = stringWord.split('');
 
     this.objArray = [];
@@ -18,11 +20,11 @@ function Word(stringWord) {
     this.generateObjFromChars(this.objArray);
 
     this.returnWordString = () => {
-        placeHolder = "";
+        wordPlaceHolder = ""
         this.objArray.forEach(function (letterObj) {
-            placeHolder += letterObj.toString() + " ";
+            wordPlaceHolder += letterObj.toString() + " ";
         })
-        return placeHolder;
+        console.log(wordPlaceHolder)
     };
 
     this.checkGuess = (guess) => {
