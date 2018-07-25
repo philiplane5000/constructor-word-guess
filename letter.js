@@ -1,6 +1,8 @@
 module.exports = Letter;
 
 function Letter(char, trueOrFalse) {
+
+    let correctGuessTally = 0;
     
     this.trueOrFalse = trueOrFalse;
 
@@ -17,8 +19,9 @@ function Letter(char, trueOrFalse) {
 
     this.checkChar = (guessedChar) => {
         if(guessedChar.toLowerCase() === this.char) {
-            this.trueOrFalse = true;
-        }
+            this.trueOrFalse = true; 
+            correctGuessTally++;
+        } 
     }
 
 

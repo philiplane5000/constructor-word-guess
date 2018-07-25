@@ -2,7 +2,8 @@ let Word = require('./word');
 let inquirer = require('inquirer');
 
 let SATWords = ['abate', 'aesthetic', 'austere', 'benevolent', 'civic', 'demur', 'dubious', 'egregious', 'freewheeling', 'melodramatic', 'postulate', 'abscond', 'alacrity', 'ebullient', 'modicum', 'munificent', 'pernicious', 'platitude', 'plaudit', 'sanguine', 'solipsism', 'umbrage', 'zephyr', 'wily']
-let count = 10;
+let totalGuesses = 10;
+// let correctGuessTally = 0;
 let wordToGuess;
 let wordPlaceHolder = "";
 
@@ -17,11 +18,11 @@ let setWord = () => {
 
 setWord();
 
-console.log(wordToGuess.charArray);
+// console.log(wordToGuess.charArray);
 
 let promptUserGuess = () => {
 
-    if (count > 0) {
+    if (totalGuesses > 0) {
 
         inquirer.prompt([
             {
@@ -33,8 +34,7 @@ let promptUserGuess = () => {
         ]).then(answer => {
             wordToGuess.checkGuess(answer.guess);
             wordToGuess.returnWordString();
-            // let wordToGuess = wordToGuess;
-            count--;
+            totalGuesses--;
             promptUserGuess(wordToGuess);
         })
 
