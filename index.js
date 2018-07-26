@@ -1,6 +1,6 @@
 let Word        = require('./word');
+let gamewords   = require('./words');
 let inquirer    = require('inquirer');
-let SATWords    = ['abate', 'aesthetic', 'austere', 'benevolent', 'civic', 'demur', 'dubious', 'egregious', 'freewheeling', 'melodramatic', 'postulate', 'abscond', 'alacrity', 'ebullient', 'modicum', 'munificent', 'pernicious', 'platitude', 'plaudit', 'sanguine', 'solipsism', 'umbrage', 'zephyr', 'wily']
 let guessesRemaining = 10;
 let wordToGuess;
 
@@ -13,7 +13,7 @@ function generateNewWord(array) {
 }
 
 function setWord() {
-    wordToGuess = new Word(generateNewWord(SATWords));
+    wordToGuess = new Word(generateNewWord(gamewords));
 }
 
 function promptUserGuess() {
