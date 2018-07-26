@@ -1,6 +1,6 @@
 # CONSTRUCTOR-WORD-GUESS
 
-### DESCRIPTION: 
+## DESCRIPTION: 
 
 * Put your vocabulary to the test by finding hidden words one letter guess at a time.
 
@@ -10,16 +10,18 @@
 
 ## HOW-TO:
 
-* `CLONE` this repository or download `ZIP` and `UNZIP` to your local machine
+* `CLONE` this repository or `ZIP` and `UNZIP` to your local machine
 
 * `RUN` `npm install` in your terminal/bash window to download inquirer package and others
 
-* `RUN` game by typing `node index` into your terminal/bash
+* `RUN` game by typing `node index` into your terminal/bash followed by `ENTER / RETURN`
 
 ## INSTRUCTIONS:
 
-* `TYPE` a single letter and `SUBMIT` your guess by clicking `ENTER / RETURN`
+* `START` every round with 10 guesses!
 
-* `ONLY` incorrect guesses reduce your total number of guesses (Every round you start with 10!)
+* `TYPE` a single letter and `SUBMIT` your guess with `ENTER / RETURN`
+
+* `ONLY` incorrect submissions deduct guesses
 
 * `HAVE FUN!`
