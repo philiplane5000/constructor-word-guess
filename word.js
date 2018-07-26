@@ -4,7 +4,7 @@ module.exports = Word;
 
 function Word(stringWord) {
 
-    // let wordPlaceHolder = "";
+    this.answer = stringWord;
 
     this.charArray = stringWord.split('');
 
@@ -24,20 +24,33 @@ function Word(stringWord) {
         this.objArray.forEach(function (letterObj) {
             wordPlaceHolder += letterObj.toString() + " ";
         })
-        console.log(wordPlaceHolder);
+        console.log(`\n${wordPlaceHolder}\n`);
     };
 
-    this.deductOneGuessOrNot = (guess) => {
+    this.deductGuessOrAlert = (guess) => {
+
         let decrement = true;
+        let correctGuess = false;
+        let previousGuess = false;
+
         this.objArray.forEach(function (letterObj) {
             if (letterObj.char === guess && letterObj.trueOrFalse === false) {
-                console.log('CORRECT GUESS!');
+                correctGuess = true;
                 decrement = false;
             } else if (letterObj.char === guess && letterObj.trueOrFalse === true) {
-                console.log('YOU ALREADY GUESSED: ' + guess);
+                previousGuess = true;
                 decrement = false;
             }
         })
+        if(correctGuess === true) {
+            console.log(`\n CORRECT!`);
+        }
+        if (previousGuess === true) {
+            console.log(`\n"${guess}" ... REALLY? `);
+        }
+        if(correctGuess !== true && previousGuess !== true) {
+            console.log(`\n INCORRECT!`)
+        }
         return decrement
     };
 

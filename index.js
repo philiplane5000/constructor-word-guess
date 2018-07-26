@@ -4,7 +4,7 @@ let inquirer = require('inquirer');
 let SATWords = ['abate', 'aesthetic', 'austere', 'benevolent', 'civic', 'demur', 'dubious', 'egregious', 'freewheeling', 'melodramatic', 'postulate', 'abscond', 'alacrity', 'ebullient', 'modicum', 'munificent', 'pernicious', 'platitude', 'plaudit', 'sanguine', 'solipsism', 'umbrage', 'zephyr', 'wily']
 let guessesRemaining = 10;
 let wordToGuess;
-let wordPlaceHolder = "";
+// let wordPlaceHolder = "";
 
 let generateNewWord = (array) => {
     let randomIndex = Math.floor(Math.random() * array.length);
@@ -25,17 +25,17 @@ let promptUserGuess = () => {
 
         inquirer.prompt([
             {
-                message: "Guess a letter: ",
                 input: "text",
+                message: "Guess a letter: ",
                 name: "guess"
             }
 
         ]).then(answer => {
 
-            if (wordToGuess.deductOneGuessOrNot(answer.guess) === true) { guessesRemaining--}
+            if (wordToGuess.deductGuessOrAlert(answer.guess) === true) { guessesRemaining--}
             wordToGuess.checkGuess(answer.guess);
             wordToGuess.returnWordString();
-            console.log(guessesRemaining);
+            console.log(`Guesses Left: ${guessesRemaining}\n`);
             if(wordToGuess.alertChampion() === true) {
                 console.log('CONGRATULATIONS!');
             } else {
@@ -44,7 +44,10 @@ let promptUserGuess = () => {
         })
 
     } else {
+        console.log('**********')
         console.log('GAME OVER!')
+        console.log('**********')
+        console.log(`THE WORD THAT STUMPED YOU WAS:  "${wordToGuess.answer}" `);
         //run inquirer prompt "Play again?" --> newGame()
     }
 
