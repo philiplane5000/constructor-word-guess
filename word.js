@@ -28,11 +28,9 @@ function Word(stringWord) {
     };
 
     this.deductGuessOrAlert = (guess) => {
-
         let decrement = true;
         let correctGuess = false;
         let previousGuess = false;
-
         this.objArray.forEach(function (letterObj) {
             if (letterObj.char === guess && letterObj.trueOrFalse === false) {
                 correctGuess = true;
@@ -42,13 +40,13 @@ function Word(stringWord) {
                 decrement = false;
             }
         })
-        if(correctGuess === true) {
+        if (correctGuess === true) {
             console.log(`\n CORRECT!`);
         }
         if (previousGuess === true) {
             console.log(`\n"${guess}" ... REALLY? `);
         }
-        if(correctGuess !== true && previousGuess !== true) {
+        if (correctGuess !== true && previousGuess !== true) {
             console.log(`\n INCORRECT!`)
         }
         return decrement
@@ -62,18 +60,14 @@ function Word(stringWord) {
 
     this.alertChampion = () => {
         let champion = true;
-
         this.objArray.forEach(function (letterObj) {
             if (letterObj.trueOrFalse === false) {
                 champion = false;
             }
         })
-
         return champion
     }
-
-
-
+    
 }
 
 
