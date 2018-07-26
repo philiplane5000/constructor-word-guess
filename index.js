@@ -3,8 +3,6 @@ let inquirer = require('inquirer');
 
 let SATWords = ['abate', 'aesthetic', 'austere', 'benevolent', 'civic', 'demur', 'dubious', 'egregious', 'freewheeling', 'melodramatic', 'postulate', 'abscond', 'alacrity', 'ebullient', 'modicum', 'munificent', 'pernicious', 'platitude', 'plaudit', 'sanguine', 'solipsism', 'umbrage', 'zephyr', 'wily']
 let guessesRemaining = 10;
-// let numTrue = 0;
-// let correctGuessTally = 0;
 let wordToGuess;
 let wordPlaceHolder = "";
 
@@ -38,7 +36,11 @@ let promptUserGuess = () => {
             wordToGuess.checkGuess(answer.guess);
             wordToGuess.returnWordString();
             console.log(guessesRemaining);
-            promptUserGuess(wordToGuess);
+            if(wordToGuess.alertChampion() === true) {
+                console.log('CONGRATULATIONS!');
+            } else {
+                promptUserGuess(wordToGuess);
+            }
         })
 
     } else {
