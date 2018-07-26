@@ -1,46 +1,25 @@
-# constructor-word-guess
+# CONSTRUCTOR-WORD-GUESS
 
-## Instructions
+### DESCRIPTION: 
 
-The completed game should meet the following criteria:
+* Put your vocabulary to the test by finding hidden words one letter guess at a time.
 
-1. The completed game should be able to receive user input using the `inquirer` or `prompt` npm packages.
+* Game comes preloaded with an array of "SAT" words in file `words.js`
 
-2. Your solution should have, at minimum, three files:
+  * Feel free to add additional words or swap the word list out entirely! 
 
-* **Letter.js**: Contains a constructor, Letter. This constructor should be able to either display an underlying character or a blank placeholder (such as an underscore), depending on whether or not the user has guessed the letter. That means the constructor should define:
+## HOW-TO:
 
-  * A string value to store the underlying character for the letter
+* `CLONE` this repository or download `ZIP` and `UNZIP` to your local machine
 
-  * A boolean value that stores whether that letter has been guessed yet
+* `RUN` `npm install` in your terminal/bash window to download inquirer package and others
 
-  * A function that returns the underlying character if the letter has been guessed, or a placeholder (like an underscore) if the letter has not been guessed
+* `RUN` game by typing `node index` into your terminal/bash
 
-  * A function that takes a character as an argument and checks it against the underlying character, updating the stored boolean value to true if it was guessed correctly
+## INSTRUCTIONS:
 
-* **Word.js**: Contains a constructor, Word that depends on the Letter constructor. This is used to create an object representing the current word the user is attempting to guess. That means the constructor should define:
+* `TYPE` a single letter and `SUBMIT` your guess by clicking `ENTER / RETURN`
 
-  * An array of `new` Letter objects representing the letters of the underlying word
+* `ONLY` incorrect guesses reduce your total number of guesses (Every round you start with 10!)
 
-  * A function that returns a string representing the word. This should call the function on each letter object (the first function defined in `Letter.js`) that displays the character or an underscore and concatenate those together.
-
-  * A function that takes a character as an argument and calls the guess function on each letter object (the second function defined in `Letter.js`)
-
-* **index.js**: The file containing the logic for the course of the game, which depends on `Word.js` and:
-
-  * Randomly selects a word and uses the `Word` constructor to store it
-
-  * Prompts the user for each guess and keeps track of the user's remaining guesses
-
-3. `Letter.js` *should not* `require` any other files.
-
-4. `Word.js` *should only* require `Letter.js`
-
-5. **HINT:** Write `Letter.js` first and test it on its own before moving on, then do the same thing with `Word.js`
-
-6. **HINT:** If you name your letter's display function `toString`, JavaScript will call that function automatically whenever casting that object to a string (check out this example: https://jsbin.com/facawetume/edit?js,console)
-
-- - -
-
-
-* NOTES: Revise recursion activities and apply here -- or else .then runs right away within function
+* `HAVE FUN!`
