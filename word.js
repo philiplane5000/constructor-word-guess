@@ -24,14 +24,32 @@ function Word(stringWord) {
         this.objArray.forEach(function (letterObj) {
             wordPlaceHolder += letterObj.toString() + " ";
         })
-        console.log(wordPlaceHolder)
+        console.log(wordPlaceHolder);
     };
+
+    this.deductOneGuessOrNot = (guess) => {
+
+        let decrement = true;
+
+        this.objArray.forEach(function (letterObj) {
+            if (letterObj.char === guess && letterObj.trueOrFalse === false) {
+                console.log('CORRECT GUESS!');
+                decrement = false;
+            } else if (letterObj.char === guess && letterObj.trueOrFalse === true) {
+                console.log('YOU ALREADY GUESSED: ' + guess);
+                decrement = false;
+            } 
+        }); 
+        return decrement
+    }
 
     this.checkGuess = (guess) => {
         this.objArray.forEach(function (letterObj) {
             letterObj.checkChar(guess)
         })
-    }
+    };
+
+
 
 }
 
