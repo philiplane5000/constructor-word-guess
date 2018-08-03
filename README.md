@@ -12,7 +12,7 @@
 
 * `CLONE` this repository or `ZIP` and `UNZIP` to your local machine
 
-* `RUN` `npm install` in your terminal/bash window to download inquirer package and others
+* `RUN` `npm install` in your terminal/bash window to download dependencies
 
 * `RUN` game by typing `node index` into your terminal/bash followed by `ENTER / RETURN`
 
